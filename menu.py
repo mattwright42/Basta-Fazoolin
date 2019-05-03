@@ -1,3 +1,9 @@
+class Business:
+    def __init__(self, name, franchises):
+        self.name = name
+        self.franchises = franchises
+
+
 class Franchise:
     def __init__(self, address, menus):
         self.address = address
@@ -53,4 +59,4 @@ flagship_store = Franchise('1232 West End Road', menus)
 
 new_installment = Franchise('12 East Mulberry Street', menus)
 
-print(new_installment.available_menus(1200))
+print(new_installment.available_menus(1700))
