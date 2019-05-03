@@ -9,6 +9,13 @@ class Menu:
     def __repr__(self):
         return self.name + " Menu available from " + str(self.start_time) + " to " + str(self.end_time) + "."
 
+    def calculate_bill(self, purchased_items):
+        bill = 0
+        for item in purchased_items:
+            if item in self.items:
+                bill += self.items[item]
+        return bill
+
 
 brunch = Menu("Brunch", {'pancakes': 7.50, 'waffles': 9.00, 'burger': 11.00, 'home fries': 4.50, 'coffee': 1.50, 'espresso': 3.00, 'tea': 1.00, 'mimosa': 10.50, 'orange juice': 3.50
                          }, 1100, 1600)
@@ -27,3 +34,5 @@ print(brunch)
 print(early_bird)
 print(dinner)
 print(kids)
+
+print(brunch.calculate_bill(['pancakes', 'home fries', 'coffee']))
