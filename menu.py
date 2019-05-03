@@ -3,6 +3,11 @@ class Franchise:
         self.address = address
         self.menus = menus
 
+    def __repr__(self):
+        return self.address
+
+    def available_menus(self, time):
+
 
 class Menu:
     def __init__(self, name, items, start_time, end_time):
@@ -35,12 +40,11 @@ dinner = Menu("Dinner", {'crostini with eggplant caponata': 13.00, 'caesar      
 kids = Menu("Kids", {'chicken nuggets': 6.50,
                      'fusilli with wild mushrooms': 12.00, 'apple juice': 3.00}, 1100, 2100)
 
-print(brunch)
-print(early_bird)
-print(dinner)
-print(kids)
 
-print(brunch.calculate_bill(['pancakes', 'home fries', 'coffee']))
+menus = [brunch, early_bird, dinner, kids]
 
-print(early_bird.calculate_bill(
-    ['salumeria plate', 'mushroom ravioli (vegan)']))
+flagship_store = Franchise('1232 West End Road', menus)
+
+new_installment = Franchise('12 East Mulberry Street', menus)
+
+print(new_installment)
