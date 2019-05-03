@@ -1,4 +1,9 @@
-# Create a Menu class
+class Franchise:
+    def __init__(self, address, menus):
+        self.address = address
+        self.menus = menus
+
+
 class Menu:
     def __init__(self, name, items, start_time, end_time):
         self.name = name
@@ -36,3 +41,6 @@ print(dinner)
 print(kids)
 
 print(brunch.calculate_bill(['pancakes', 'home fries', 'coffee']))
+
+print(early_bird.calculate_bill(
+    ['salumeria plate', 'mushroom ravioli (vegan)']))
