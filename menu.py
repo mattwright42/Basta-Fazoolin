@@ -59,4 +59,19 @@ flagship_store = Franchise('1232 West End Road', menus)
 
 new_installment = Franchise('12 East Mulberry Street', menus)
 
-print(new_installment.available_menus(1700))
+business_one = Business("Basta Fazoolin' with my Heart", [
+                        flagship_store, new_installment])
+
+# Arepa menu
+
+arepas_items = {
+    'arepa pabellon': 7.00, 'pernil arepa': 8.50, 'guayanes arepa': 8.00, 'jamon arepa': 7.50
+}
+
+arepas_menu = Menu("Take a' Arepa", arepas_items, 1000, 2000)
+
+arepas_place = Franchise('189 Fitzgerald Avenue', [arepas_menu])
+
+business_two = Business("Take a' Arepa", [arepas_place])
+
+print(business_two.franchises[0])
