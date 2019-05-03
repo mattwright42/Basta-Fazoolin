@@ -7,6 +7,12 @@ class Franchise:
         return self.address
 
     def available_menus(self, time):
+        available_menu = []
+        for menu in self.menus:
+            if time >= menu.start_time and time <= menu.end_time:
+                available_menu.append(menu)
+
+        return available_menu
 
 
 class Menu:
@@ -47,4 +53,4 @@ flagship_store = Franchise('1232 West End Road', menus)
 
 new_installment = Franchise('12 East Mulberry Street', menus)
 
-print(new_installment)
+print(new_installment.available_menus(1200))
